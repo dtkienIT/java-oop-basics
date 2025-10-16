@@ -8,7 +8,7 @@ A simple Java project to practice basic Object-Oriented Programming (OOP) concep
 
 This project demonstrates how to:
 
-- Create a Java class with private attributes and public getter/setter methods.
+- Create a Java class with constructor, private attributes and public getter/setter methods.
 - Use encapsulation to protect class members.
 - Create and manage multiple instances of a class.
 - Accept user input using the `Scanner` class.
@@ -22,22 +22,29 @@ This project demonstrates how to:
 
 Defines the `Book` class with attributes:
 
-- `title` – book title
-- `author` – book author
-- `price` – book price
+- `title` – book title  
+- `author` – book author  
+- `price` – book price  
 
 Includes:
+- Two constructors:
+  - A **default constructor** that initializes `title` and `author` to `null`
+  - An **overloaded constructor** that sets all attributes (`title`, `author`, `price`)
+- Setter and getter methods for all attributes  
+- A custom `toString()` method to display book details in a formatted way  
 
-- Setter and getter methods for all attributes
-- A custom `toString()` method to format the output
+---
 
 ### **BooksMenu.java**
 
-Main class that:
+Main class that provides an interactive console menu to:
 
-- Uses a menu to allow users to **add** or **view** books
-- Stores up to **10 books** in an array
-- Reads input from the console
+- **View all books** currently stored  
+- **Add new books**, with an option to choose between the **default** or **overloaded** constructor  
+- **Compare the prices** of two books and display the more expensive one  
+- Store up to **10 books** in an array  
+- Handle all user input via the `Scanner` class  
+
 
 ---
 
@@ -104,19 +111,34 @@ java BooksMenu
 ```
 ## 🧠 Example Output
 ```bash
-Press 1 to view books, 2 to add books, any other key to exit
+Press 1 to view books, 2 to add books, 3 to compare prices of books, any other key to exit
+2
+Which constructor do you want to use? Press 1 for default,any other key for overloaded constructor
+1
+Enter book title
+Gone with the wind
+Enter book author
+Margaret Mitchell
+Enter book price
+45
+Press 1 to view books, 2 to add books, 3 to compare prices of books, any other key to exit
+2
+Which constructor do you want to use? Press 1 for default,any other key for overloaded constructor
 2
 Enter book title
-The Great Gatsby
+Inner Excellence
 Enter book author
-F. Scott Fitzgerald
+Kim Murphy
 Enter book price
-15.99
-
-Press 1 to view books, 2 to add books, any other key to exit
+12
+Press 1 to view books, 2 to add books, 3 to compare prices of books, any other key to exit
 1
-Title - The Great Gatsby
-Author - F. Scott Fitzgerald
-Price - 15.99
+Title - Gone with the wind
+Author - Margaret Mitchell
+Price - 45.00
+Title - Inner Excellence
+Author - Kim Murphy
+Price - 12.00
+Press 1 to view books, 2 to add books, 3 to compare prices of books, any other key to exit
 
 ```
